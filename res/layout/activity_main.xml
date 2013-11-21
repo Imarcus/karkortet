@@ -1,79 +1,84 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C90A5A"
+    android:orientation="vertical"
     tools:context=".MainActivity"
-    tools:ignore="MergeRootFrame"
-    android:background="#C90A5A">
+    tools:ignore="MergeRootFrame" >
+
+    <LinearLayout
+        android:id="@+id/LinearLayoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="2"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayoutTopContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/TextViewCardNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="No card number?"
+                android:textSize="20dp" />
+            
+        </RelativeLayout>
+        
+    </LinearLayout>
 
     <RelativeLayout
-        android:id="@+id/RelativeLayout1"
+        android:id="@+id/RelativeLayoutCenter"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="56dp"
-        android:background="#FFFFFF">
-
-        <RelativeLayout
-            android:id="@+id/RelativeLayout1"
-            android:layout_width="match_parent"
-            android:layout_height="15dp"
-            android:background="#FFFFFF"/>
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:background="#FFFFFF" >
 
         <TextView
-            android:id="@+id/cardNumber"
-            android:text="No card number?"
+            android:id="@+id/TextViewAccountBalance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/RelativeLayout1"
-            android:layout_centerHorizontal="true"
-            android:textSize="20dp" />
-
-        <RelativeLayout
-            android:id="@+id/RelativeLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:layout_below="@+id/cardNumber"
-            android:background="#FFFFFF"/>
-
-        <TextView
-            android:id="@+id/accountBalance"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:text="No account balance?"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/RelativeLayout2"
-            android:layout_centerHorizontal="true"
-            android:textSize="30dp"/>
+            android:layout_marginRight="10dp"
+            android:textSize="30dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="2"
+        android:orientation="vertical" >
 
         <RelativeLayout
-            android:id="@+id/RelativeLayout3"
+            android:id="@+id/RelativeLayoutBottomTop"
             android:layout_width="match_parent"
-            android:layout_height="15dp"
-            android:layout_below="@+id/accountBalance"
-            android:background="#FFFFFF"/>
+            android:layout_height="0px"
+            android:layout_weight="1" />
 
-    </RelativeLayout>
-    
-    <include layout="@layout/activity_page_view"
-        android:id="@+id/viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/RelativeLayout1"
-        
-        />
+        <include
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            layout="@layout/activity_page_view"
+            android:background="#FFFFFF" />
 
-    <TextView
-        android:id="@+id/textViewXpress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/viewpager"
-        android:layout_marginLeft="88dp"
-        android:layout_marginTop="50dp"
-        android:text="Large Text"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        <RelativeLayout
+            android:id="@+id/RelativeLayoutBottomBottom"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1" />
+    </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

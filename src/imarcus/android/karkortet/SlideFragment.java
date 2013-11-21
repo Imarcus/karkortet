@@ -9,33 +9,42 @@ import android.widget.TextView;
 
 public class SlideFragment extends Fragment {
 
-	 public static final String EXTRA_MESSAGE = "EXTRA_MESSAGE";
+	public static final String FOOD_MESSAGE = "FOOD_MESSAGE";
+	public static final String RESTAURANT_MESSAGE = "RESTAURANT_MESSAGE";
 
-	 
 
-	 public static final SlideFragment newInstance(String message)
 
-	 {
-	   SlideFragment f = new SlideFragment();
-	   Bundle bdl = new Bundle(1);
-	   bdl.putString(EXTRA_MESSAGE, message);
-	   f.setArguments(bdl);
-	   return f;
+	public static final SlideFragment newInstance(String restaurantName, String food)
 
-	 }
+	{
+		SlideFragment f = new SlideFragment();
+		Bundle bdl = new Bundle(1);
+		bdl.putString(FOOD_MESSAGE, food);
+		bdl.putString(RESTAURANT_MESSAGE, restaurantName);
+		f.setArguments(bdl);
+		return f;
 
-	 
+	}
 
-	 @Override
-	 public View onCreateView(LayoutInflater inflater, ViewGroup container,
-	   Bundle savedInstanceState) {
-	   String message = getArguments().getString(EXTRA_MESSAGE);
-	   View v = inflater.inflate(R.layout.slidefragment_layout, container, false);
-	   TextView messageTextView = (TextView)v.findViewById(R.id.textView);
-	   messageTextView.setText(message);
 
-	   return v;
 
-	 }
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+
+		//Display food
+		String message = getArguments().getString(FOOD_MESSAGE);
+		View v = inflater.inflate(R.layout.slidefragment_layout, container, false);
+		TextView textView = (TextView)v.findViewById(R.id.TextViewRestaurantFood);
+		textView.setText(message);
+		
+		//Display the restaurant name
+		message = getArguments().getString(RESTAURANT_MESSAGE);
+		textView = (TextView)v.findViewById(R.id.TextViewRestaurantName);
+		textView.setText(message);
+
+		return v;
+
+	}
 
 }

@@ -58,7 +58,7 @@ public class MainActivity extends FragmentActivity {
 
     	
     	for(Restaurant restaurant : restaurants){
-    		fList.add(SlideFragment.newInstance(restaurant.getTodaysFood()));
+    		fList.add(SlideFragment.newInstance(restaurant.getRestaurantName(),restaurant.getTodaysFood()));
     	}
 
 		return fList;
@@ -131,10 +131,10 @@ public class MainActivity extends FragmentActivity {
         @Override
         protected void onPostExecute(String[] result) {
 
-            TextView cardNumber = (TextView) findViewById(R.id.cardNumber);
+            TextView cardNumber = (TextView) findViewById(R.id.TextViewCardNumber);
             cardNumber.setText(cardNr);
 
-            TextView accountBalance = (TextView) findViewById(R.id.accountBalance);
+            TextView accountBalance = (TextView) findViewById(R.id.TextViewAccountBalance);
             accountBalance.setText(result[1] + " kr");
 
         }
