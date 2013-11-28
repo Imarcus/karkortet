@@ -3,7 +3,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C90A5A"
+    android:background="#BA1239"
     android:orientation="vertical"
     tools:context=".MainActivity"
     tools:ignore="MergeRootFrame" >
@@ -21,15 +21,40 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:id="@+id/TextViewCardNumber"
+                android:id="@+id/TextViewName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
+                android:textColor="#FFFFFF"
+                android:text="No name?"
+                android:textSize="30dp"
+                android:fontFamily="Helvetica Neue"/>
+
+            <TextView
+                android:id="@+id/TextViewCardNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/TextViewName"
+                android:layout_below="@+id/TextViewName"
+                android:textColor="#FFFFFF"
                 android:text="No card number?"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:fontFamily="Helvetica Neue"/>
+
+            <TextView
+                android:id="@+id/TextViewBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Balance"
+                android:fontFamily="Helvetica Neue"
+                android:textColor="#FFFFFF" />
             
         </RelativeLayout>
         
@@ -50,21 +75,37 @@
             android:layout_centerVertical="true"
             android:text="No account balance?"
             android:layout_marginRight="10dp"
-            android:textSize="30dp" />
+            android:textColor="#BA1239"
+            android:textSize="30sp" 
+            android:fontFamily="Helvetica Neue"/>
     </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/LinearLayoutBottom"
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="2"
+        android:layout_weight="4"
         android:orientation="vertical" >
 
         <RelativeLayout
             android:id="@+id/RelativeLayoutBottomTop"
             android:layout_width="match_parent"
             android:layout_height="0px"
-            android:layout_weight="1" />
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/TextViewLunch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="Helvetica Neue"
+                android:text="Lunch"
+                android:textColor="#FFFFFF" />
+
+        </RelativeLayout>
 
         <include
             android:id="@+id/viewpager"

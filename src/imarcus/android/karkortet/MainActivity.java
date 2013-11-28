@@ -130,6 +130,9 @@ public class MainActivity extends FragmentActivity {
 
         @Override
         protected void onPostExecute(String[] result) {
+        	
+        	TextView name = (TextView) findViewById(R.id.TextViewName);
+            name.setText(result[0]);
 
             TextView cardNumber = (TextView) findViewById(R.id.TextViewCardNumber);
             cardNumber.setText(cardNr);
@@ -162,6 +165,7 @@ public class MainActivity extends FragmentActivity {
 			NodeList childNodes;
 			String currentRestName = "No Rest name found1";
 			String currentFood = "No dish found";
+			String[] parts;
 			for(int i = 0; i < nodes.getLength(); i++){
 				currentNode = nodes.item(i);
 				childNodes = currentNode.getChildNodes();
@@ -176,7 +180,7 @@ public class MainActivity extends FragmentActivity {
 					}
 					System.out.println("----------LISTLENGTH--" + result.size() + "-------------");
 				}
-				result.add(new Restaurant(currentRestName, currentFood));
+				result.add(new Restaurant(currentRestName, currentFood.split("@")[0]));
 			}
 			return result;
 			
