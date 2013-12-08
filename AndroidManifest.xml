@@ -7,8 +7,8 @@
     <uses-sdk
         android:minSdkVersion="9"
         android:targetSdkVersion="18" />
-    
-    <uses-permission android:name="android.permission.INTERNET" /> 
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -16,8 +16,13 @@
         android:label="@string/app_name"
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         <activity
-            android:name="imarcus.android.karkortet.MainActivity"
+            android:name="imarcus.android.karkortet.CardActivity"
             android:label="@string/app_name" >
+            
+        </activity>
+        <activity
+            android:name="imarcus.android.karkortet.LoginActivity"
+            android:label="@string/title_activity_login" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

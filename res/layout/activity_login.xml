@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity" 
+    android:background="#BA1239">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_weight="3"
+        android:layout_height="0px"/>
+        
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_weight="1"
+        android:layout_height="0px"
+        android:background="#FFFFFF">
+
+        <EditText
+            android:id="@+id/CardNumberEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:ems="10"
+            android:inputType="number" >
+
+            <requestFocus />
+        </EditText>
+        
+    </RelativeLayout>
+        
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_weight="3"
+        android:layout_height="0px">
+
+        <Button
+            android:id="@+id/ConfirmCardNumberButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="OK" />
+
+    </RelativeLayout>
+
+</LinearLayout>
