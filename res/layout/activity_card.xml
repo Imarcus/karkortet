@@ -3,7 +3,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#BA1239"
+    android:background="@color/main_color"
     android:orientation="vertical"
     tools:context=".CardActivity"
     tools:ignore="MergeRootFrame" >
@@ -28,10 +28,10 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:textColor="#FFFFFF"
-                android:text="No name?"
-                android:textSize="30dp"
-                android:fontFamily="Helvetica Neue"/>
+                android:textColor="@color/white_color"
+                android:text="@string/missing_name"
+                android:textSize="30sp"
+                android:fontFamily="Helvetica Neue UltraLight"/>
 
             <TextView
                 android:id="@+id/TextViewCardNumber"
@@ -39,9 +39,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/TextViewName"
                 android:layout_below="@+id/TextViewName"
-                android:textColor="#FFFFFF"
-                android:text="No card number?"
-                android:textSize="20dp"
+                android:textColor="@color/light_main_color"
+                android:textSize="20sp"
                 android:fontFamily="Helvetica Neue"/>
 
             <TextView
@@ -52,9 +51,9 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginBottom="10dp"
                 android:layout_marginRight="10dp"
-                android:text="Balance"
+                android:text="@string/balance"
                 android:fontFamily="Helvetica Neue"
-                android:textColor="#FFFFFF" />
+                android:textColor="@color/light_main_color" />
             
         </RelativeLayout>
         
@@ -65,7 +64,7 @@
         android:layout_width="match_parent"
         android:layout_height="0px"
         android:layout_weight="1"
-        android:background="#FFFFFF" >
+        android:background="@color/white_color" >
 
         <TextView
             android:id="@+id/TextViewAccountBalance"
@@ -73,9 +72,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:text="No account balance?"
             android:layout_marginRight="10dp"
-            android:textColor="#BA1239"
+            android:textColor="@color/main_color"
             android:textSize="30sp" 
             android:fontFamily="Helvetica Neue"/>
     </RelativeLayout>
@@ -102,8 +100,8 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginRight="10dp"
                 android:fontFamily="Helvetica Neue"
-                android:text="Lunch"
-                android:textColor="#FFFFFF" />
+                android:text="@string/lunch"
+                android:textColor="@color/light_main_color" />
 
         </RelativeLayout>
 
@@ -119,7 +117,37 @@
             android:id="@+id/RelativeLayoutBottomBottom"
             android:layout_width="match_parent"
             android:layout_height="0px"
-            android:layout_weight="1" />
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/BackButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:text="@string/back"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/main_color"
+            	android:textColor="@drawable/button_on_click_text_color"
+            	android:textSize="15sp"
+            	android:fontFamily="Helvetica Neue" />
+            
+            <!-- <Button
+                android:id="@+id/SettingsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:text="SETTINGS"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#BA1239"
+            	android:textColor="@drawable/button_on_click_text_color"
+            	android:textSize="15sp"
+            	android:fontFamily="Helvetica Neue" />-->
+
+        </RelativeLayout>
     </LinearLayout>
 
 </LinearLayout>

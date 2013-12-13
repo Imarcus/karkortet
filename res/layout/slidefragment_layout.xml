@@ -4,7 +4,7 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:orientation="vertical"
-  android:background="#FFFFFF" >
+  android:background="@color/white_color" >
 
   <TextView
       android:id="@+id/TextViewRestaurantFood"
@@ -14,9 +14,11 @@
       android:layout_centerVertical="true"
       android:layout_alignParentRight="true"
       android:layout_marginRight="13dp"
-      android:textSize="15dp"
-      android:textColor="#BA1239"
+      android:layout_marginLeft="13dp"
+      android:textSize="15sp"
+      android:textColor="@color/main_color"
       android:fontFamily="Helvetica Neue"
+      android:lines="1"
       android:ellipsize="end" />
   
   <TextView
@@ -28,8 +30,8 @@
       android:layout_alignParentTop="true"
       android:layout_marginLeft="13dp"
       android:layout_marginTop="13dp"
-      android:textSize="15dp"
-      android:textColor="#BA1239"
+      android:textSize="15sp"
+      android:textColor="@color/main_color"
       android:fontFamily="Helvetica Neue"/>
 
 </RelativeLayout>
