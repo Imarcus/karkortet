@@ -10,16 +10,18 @@ import android.widget.TextView;
 public class SlideFragment extends Fragment {
 
 	public static final String FOOD_MESSAGE = "FOOD_MESSAGE";
+	public static final String DISH_MESSAGE = "DISH_MESSAGE";
 	public static final String RESTAURANT_MESSAGE = "RESTAURANT_MESSAGE";
 
 
 
-	public static final SlideFragment newInstance(String restaurantName, String food)
+	public static final SlideFragment newInstance(String restaurantName, String food, String dishName)
 
 	{
 		SlideFragment f = new SlideFragment();
 		Bundle bdl = new Bundle(1);
 		bdl.putString(FOOD_MESSAGE, food);
+		bdl.putString(DISH_MESSAGE, dishName);
 		bdl.putString(RESTAURANT_MESSAGE, restaurantName);
 		f.setArguments(bdl);
 		return f;
@@ -39,7 +41,7 @@ public class SlideFragment extends Fragment {
 		textView.setText(message);
 		
 		//Display the restaurant name
-		message = getArguments().getString(RESTAURANT_MESSAGE);
+		message = getArguments().getString(DISH_MESSAGE) + " - " + getArguments().getString(RESTAURANT_MESSAGE);
 		textView = (TextView)v.findViewById(R.id.TextViewRestaurantName);
 		textView.setText(message);
 

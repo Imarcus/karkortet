@@ -33,5 +33,7 @@
       android:textSize="15sp"
       android:textColor="@color/main_color"
       android:fontFamily="Helvetica Neue"/>
+  
+  
 
 </RelativeLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Karkortet</string>
+    <string name="action_settings">Inställningar</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="CARD_NUMBER"></string>
+    <string name="balance">SALDO</string>
+    <string name="lunch">LUNCH</string>
+    <string name="back">TILLBAKA</string>
+    <string name="log_in">LOGGA IN</string>
+    <string name="enter_card_number">KORTNUMMER</string>
+    <string name="loading">LADDAR</string> 
+    <string name="missing_name">Saknar Namn</string>
+
+</resources>

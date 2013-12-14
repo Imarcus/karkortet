@@ -46,7 +46,7 @@ public class LoginActivity extends Activity {
 		//If we didn't get here by the back button from the card activity //If there is a saved card number
 		if(extras == null && !savedCardNr.equals("")){
 			//Go directly to the card activity with the saved card nr
-			setContentView(R.layout.activity_loading);
+			setContentView(R.layout.loading_screen);
 			cardNr = savedCardNr;
 			new Chalmrest().execute(savedCardNr);
 		} else {	
