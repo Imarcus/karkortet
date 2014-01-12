@@ -7,3 +7,10 @@ The purpose of this application is to provide Chalmers students at both Johanneb
 The menus from which this application gathers its data comes from these rss-feeds: http://www.chalmerskonferens.se/en/rss-2/
 
 
+Contributing
+=========
+
+Anyone is welcome to contribute, simply fork this repository and pull request.
+
+If you you have any bugs to report please create an issue or mail me at karkortet@gmail.com
+You can also mail me if you have any questions, issues or ideas about how to improve the application.
