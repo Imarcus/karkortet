@@ -41,7 +41,14 @@ public class SlideFragment extends Fragment {
 		textView.setText(message);
 		
 		//Display the restaurant name
-		message = getArguments().getString(DISH_MESSAGE) + " - " + getArguments().getString(RESTAURANT_MESSAGE);
+		if(getArguments().getString(DISH_MESSAGE).equals("")){
+			message = getArguments().getString(RESTAURANT_MESSAGE); 
+		} else if(getArguments().getString(RESTAURANT_MESSAGE).equals("")){
+			message = getArguments().getString(DISH_MESSAGE);
+		} else {
+			message = getArguments().getString(DISH_MESSAGE) + " - " 
+					+ getArguments().getString(RESTAURANT_MESSAGE);
+		}
 		textView = (TextView)v.findViewById(R.id.TextViewRestaurantName);
 		textView.setText(message);
 

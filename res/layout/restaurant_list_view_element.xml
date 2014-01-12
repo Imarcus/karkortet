@@ -2,14 +2,29 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white_color" >
+    android:background="@color/white_color">
 
     <CheckedTextView
         android:id="@+id/CheckedTextViewRestaurant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="CheckedTextView" />
+        android:fontFamily="Helvetica Neue"
+        android:textColor="@color/main_color" 
+        android:layout_marginTop="10dp"
+    	android:layout_marginBottom="10dp"
+		android:layout_marginLeft="20dp"/>
+    
+    <CheckBox
+        android:id="@+id/CheckBoxRestaurant"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:focusable="false"
+        android:clickable="false"
+        android:button="@null"
+        android:background='@drawable/drawable_checkbox'/>
 
 </RelativeLayout>

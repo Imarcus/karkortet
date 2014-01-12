@@ -2,6 +2,7 @@ package imarcus.android.karkortet;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -44,6 +45,7 @@ public class CardActivity extends FragmentActivity {
 	private String name;
 	private String value;
 	SlidePageAdapter pageAdapter;
+	//Restaurants displayed in the slide fragments
 	private ArrayList<Restaurant> restaurants;
 
 	@Override
@@ -61,6 +63,16 @@ public class CardActivity extends FragmentActivity {
 
 		setCardInformation(name, value, cardNr);
 
+		initButtons();
+
+		new ChalmFood().execute();
+		findViewById(R.id.TextViewLoading).setVisibility(View.VISIBLE);
+
+
+	}
+	
+	private void initButtons(){
+		//Setup of the back button
 		final Button backButton = (Button) findViewById(R.id.BackButton);
 		backButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
@@ -70,21 +82,33 @@ public class CardActivity extends FragmentActivity {
 				startActivity(intent);
 			}
 		});
-
-		new ChalmFood().execute();
-
+		
+		//Setup of the refresh button
+		final Button refreshButton = (Button) findViewById(R.id.RefreshButton);
+		refreshButton.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				new ChalmFood().execute();
+				findViewById(R.id.TextViewLoading).setVisibility(View.VISIBLE);
+				
+			}
+		});
 	}
-
+	
 	private List<Fragment> getFragments() {
 		List<Fragment> fList = new ArrayList<Fragment>();
-
-		for (Restaurant restaurant : restaurants) {
-			fList.add(SlideFragment.newInstance(restaurant.getRestaurantName(),
-					restaurant.getTodaysFood(), restaurant.getDishName()));
+		
+		if(restaurants.size() == 0){
+			fList.add(SlideFragment.newInstance("","Cannot find any restaurants",""));
+		} else {
+			for (Restaurant restaurant : restaurants) {
+				fList.add(SlideFragment.newInstance(restaurant.getRestaurantName(),
+						restaurant.getTodaysFood(), restaurant.getDishName()));
+			}
 		}
 		return fList;
 	}
 
+	//Sets card information shown in this activity
 	private void setCardInformation(String name, String value, String cardNr) {
 		TextView nameView = (TextView) findViewById(R.id.TextViewName);
 		nameView.setText(name);
@@ -96,9 +120,15 @@ public class CardActivity extends FragmentActivity {
 		accountBalance.setText(value + " kr");
 	}
 
+	/*
+	 * A class for fetching menus of the choosen restaurants
+	 * Uses xml-files from: http://www.chalmerskonferens.se/rss-2/
+	 *
+	 */
 	private class ChalmFood extends
 			AsyncTask<String, Void, ArrayList<Restaurant>> {
 
+		//Do nothing
 		protected void onPreExecute() {
 		}
 
@@ -117,11 +147,18 @@ public class CardActivity extends FragmentActivity {
 					language = "en";
 				}
 
-				ArrayList<String> restaurants = new ArrayList<String>();
+				//Get choosen restaurants from the restaurant gui list
+				SharedPreferences sharedPref = getSharedPreferences(Constants.RESTAURANT_PREFS, 0);
+				ArrayList<String> choosenRestaurants = new ArrayList<String>();
+				for(String restaurant : Constants.allRestaurantsArray){
+					if(sharedPref.getBoolean(restaurant, false)){
+						choosenRestaurants.add(restaurant);
+					}
+				}	
 				
-				restaurants.add("karrestaurangen");
-				restaurants.add("linsen");
-				
+				if(choosenRestaurants.size() == 0){
+					return null;
+				}
 
 				Calendar today = Calendar.getInstance();
 
@@ -139,30 +176,32 @@ public class CardActivity extends FragmentActivity {
 				String currentRestName = "No restaurant name";
 				String currentDishName = "No dish name found";
 				String currentFood = "No dish found";
+				String location = "";
+				
+				//Set language, if it is not Swedish, set it to English.
+				language = getResources().getConfiguration().locale
+						.getLanguage();
+				if (!language.equals("sv")) {
+					language = "en";
+				}
 				
 				
-
-				//Loop through all chosen restaurants
-				for (String r : restaurants) {
+				//Loop through all chosen restaurants and add their dishes as slide fragments
+				for (String restaurant : choosenRestaurants) {
 					
-					language = getResources().getConfiguration().locale
-							.getLanguage();
-					if(r.equals("linsen")){
-						language = "sv";
+					if(Constants.johannebergRestaurantsArray.contains(restaurant)){
+						location = "johanneberg";
+					} else if(Constants.lindholmenRestaurantsArray.contains(restaurant)){
+						location = "lindholmen";
 					}
-					if (!language.equals("sv")) {
-						language = "en";
-					}
+					
+					
 					
 					Document doc = builder
-							.parse("http://cm.lskitchen.se/johanneberg/" + r + "/"
-									+ language
-									+ "/"
-									+ today.get(Calendar.YEAR)
-									+ "-"
-									+ today.get(Calendar.MONTH)
-									+ "-"
-									+ today.get(Calendar.DAY_OF_MONTH) + ".rss");
+							.parse("http://cm.lskitchen.se/" + location + "/" + restaurant + "/"
+					+ language
+					+ "/"
+					+ "today"/*today.get(Calendar.DAY_OF_MONTH)*/ + ".rss");
 
 					expr = xpath.compile("//channel");
 
@@ -214,7 +253,12 @@ public class CardActivity extends FragmentActivity {
 
 		@Override
 		protected void onPostExecute(ArrayList<Restaurant> result) {
-			restaurants = result;
+			findViewById(R.id.TextViewLoading).setVisibility(View.INVISIBLE);
+			if(result == null){
+				restaurants  = new ArrayList<Restaurant>();
+			} else {
+				restaurants = result;
+			}
 			List<Fragment> fragments = getFragments();
 			pageAdapter = new SlidePageAdapter(getSupportFragmentManager(),
 					fragments);

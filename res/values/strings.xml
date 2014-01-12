@@ -10,8 +10,10 @@
     <string name="lunch">LUNCH</string>
     <string name="back">BACK</string>
     <string name="log_in">LOG IN</string>
-    <string name="enter_card_number">ENTER CARD NUMBER</string><string name="loading">LOADING</string>
-    
+    <string name="enter_card_number">ENTER CARD NUMBER</string>
+    <string name="loading">LOADING</string>
+    <string name="restaurants">CHOOSE RESTAURANTS</string>
     <string name="missing_name">Missing Name</string>
+    <string name="refresh">REFRESH</string>
 
 </resources>

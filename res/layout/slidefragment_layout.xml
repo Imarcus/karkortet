@@ -8,7 +8,6 @@
 
   <TextView
       android:id="@+id/TextViewRestaurantFood"
-      android:text="Fooood and good stuff"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_centerVertical="true"
@@ -23,7 +22,7 @@
   
   <TextView
       android:id="@+id/TextViewRestaurantName"
-      android:text="Weeeow xpress"
+      android:textStyle="bold"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_alignParentLeft="true"

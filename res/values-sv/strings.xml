@@ -9,8 +9,10 @@
     <string name="lunch">LUNCH</string>
     <string name="back">TILLBAKA</string>
     <string name="log_in">LOGGA IN</string>
-    <string name="enter_card_number">KORTNUMMER</string>
+    <string name="enter_card_number">SKRIV IN KORTNUMMER</string>
     <string name="loading">LADDAR</string> 
+    <string name="restaurants">VÄLJ RESTAURANGER</string>
     <string name="missing_name">Saknar Namn</string>
+    <string name="refresh">UPPDATERA</string>
 
 </resources>

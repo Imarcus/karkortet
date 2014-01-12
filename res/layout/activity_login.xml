@@ -2,68 +2,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_color"
     android:orientation="vertical"
-    tools:context=".LoginActivity" 
-    android:background="@color/main_color">
-    
+    tools:context=".LoginActivity" >
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_weight="3"
-        android:layout_height="0px">
-        
+        android:layout_height="0px"
+        android:layout_weight="2" >
+
         <TextView
-            android:layout_width="wrap_content"  
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="50dp"
-            android:textSize="25sp"
-            android:text="@string/enter_card_number"  
-            android:textColor="@color/white_color"     
-            />
-        
-        
-	</RelativeLayout>
-        
-    
-        
-    
-	<RelativeLayout
-	        android:layout_width="fill_parent"
-	        android:layout_weight="1"
-	        android:layout_height="0px"
-	        android:background="@color/white_color">
-	
-	        <EditText
-	            android:id="@+id/CardNumberEditText"
-	            android:layout_width="match_parent"
-	            android:layout_height="match_parent"
-	            android:layout_alignParentLeft="true"
-	            android:layout_alignParentRight="true"
-	            android:layout_centerVertical="true"
-	            android:layout_marginLeft="10dp"
-	            android:layout_marginRight="10dp"
-	            android:layout_marginTop="10dp"
-	            android:layout_marginBottom="10dp"
-	            android:textAlignment="center"
-	            android:gravity="center"
-	            android:textSize="35sp"
-	            android:textColor="@color/main_color"
-	            android:inputType="number"
-	            android:fontFamily="Helvetica Neue"
-	            android:background="@drawable/login_edit_text_bg" >
-	
-	            <requestFocus />
-	        </EditText>
-        
+            android:layout_marginBottom="30dp"
+            android:text="@string/enter_card_number"
+            android:textColor="@color/white_color"
+            android:textSize="30sp" />
     </RelativeLayout>
-        
-        
-    
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:background="@color/white_color" >
+
+        <EditText
+            android:id="@+id/CardNumberEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/login_edit_text_bg"
+            android:fontFamily="Helvetica Neue"
+            android:gravity="center"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/main_color"
+            android:textSize="35sp" >
+        </EditText>
+    </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_weight="3"
-        android:layout_height="0px">
+        android:layout_height="0px"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/TextViewChooseRestaurants"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/restaurants"
+            android:textColor="@color/white_color"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="4" >
+
+	        <ListView
+	            android:id="@android:id/list"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+	            android:layout_marginBottom="10dp"
+	            android:layout_marginTop="10dp"
+	            android:divider="@color/light_main_color" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1" >
 
         <Button
             android:id="@+id/ConfirmCardNumberButton"
@@ -71,24 +91,22 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
-            android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="@string/log_in" 
             android:background="@color/main_color"
+            android:fontFamily="Helvetica Neue"
+            android:text="@string/log_in"
             android:textColor="@drawable/button_on_click_text_color"
-            android:textSize="25sp"
-            android:fontFamily="Helvetica Neue"/>
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/ErrorTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:textColor="@color/white_color"/>
-
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/white_color" />
     </RelativeLayout>
 
 </LinearLayout>

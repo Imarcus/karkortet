@@ -118,6 +118,39 @@
             android:layout_width="match_parent"
             android:layout_height="0px"
             android:layout_weight="1" >
+            
+            <TextView 
+                android:id="@+id/TextViewLoading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="Helvetica Neue"
+                android:textColor="@color/light_main_color"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/loading"
+                />
+            
+            <TextView
+                android:id="@+id/TextViewLeftArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="Helvetica Neue"
+                android:text="←"
+                android:textColor="@color/light_main_color"/>
+            
+            <TextView
+                android:id="@+id/TextViewRightArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:fontFamily="Helvetica Neue"
+                android:text="→"
+                android:textColor="@color/light_main_color"/>
 
             <Button
                 android:id="@+id/BackButton"
@@ -133,19 +166,19 @@
             	android:textSize="15sp"
             	android:fontFamily="Helvetica Neue" />
             
-            <!-- <Button
-                android:id="@+id/SettingsButton"
+           		<Button
+                android:id="@+id/RefreshButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
-                android:text="SETTINGS"
+                android:text="@string/refresh"
                 android:layout_marginBottom="10dp"
                 android:layout_marginRight="10dp"
-                android:background="#BA1239"
+                android:background="@color/main_color"
             	android:textColor="@drawable/button_on_click_text_color"
             	android:textSize="15sp"
-            	android:fontFamily="Helvetica Neue" />-->
+            	android:fontFamily="Helvetica Neue" />
 
         </RelativeLayout>
     </LinearLayout>
