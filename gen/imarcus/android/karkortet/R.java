@@ -38,8 +38,8 @@ public final class R {
     public static final class id {
         public static final int BackButton=0x7f090010;
         public static final int CardNumberEditText=0x7f090012;
-        public static final int CheckBoxRestaurant=0x7f090017;
-        public static final int CheckedTextViewRestaurant=0x7f090016;
+        public static final int CheckBoxRestaurant=0x7f090018;
+        public static final int CheckedTextViewRestaurant=0x7f090017;
         public static final int ConfirmCardNumberButton=0x7f090014;
         public static final int ErrorTextView=0x7f090015;
         public static final int LinearLayoutBottom=0x7f090008;
@@ -57,11 +57,12 @@ public final class R {
         public static final int TextViewLoading=0x7f09000d;
         public static final int TextViewLunch=0x7f09000a;
         public static final int TextViewName=0x7f090003;
-        public static final int TextViewRestaurantFood=0x7f090018;
-        public static final int TextViewRestaurantName=0x7f090019;
+        public static final int TextViewRestaurantFood=0x7f090019;
+        public static final int TextViewRestaurantName=0x7f09001a;
         public static final int TextViewRightArrow=0x7f09000f;
-        public static final int action_settings=0x7f09001a;
+        public static final int action_settings=0x7f09001b;
         public static final int container=0x7f090000;
+        public static final int restaurant_list_view=0x7f090016;
         public static final int viewpager=0x7f09000b;
     }
     public static final class layout {
@@ -69,28 +70,32 @@ public final class R {
         public static final int activity_login=0x7f030001;
         public static final int activity_main=0x7f030002;
         public static final int activity_page_view=0x7f030003;
-        public static final int restaurant_list_view_element=0x7f030004;
-        public static final int slidefragment_layout=0x7f030005;
+        public static final int activity_settings=0x7f030004;
+        public static final int restaurant_list_view_element=0x7f030005;
+        public static final int slidefragment_layout=0x7f030006;
     }
     public static final class menu {
         public static final int login=0x7f080000;
         public static final int main=0x7f080001;
     }
     public static final class string {
-        public static final int CARD_NUMBER=0x7f060004;
+        public static final int CARD_NUMBER=0x7f060003;
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
-        public static final int back=0x7f060007;
-        public static final int balance=0x7f060005;
-        public static final int enter_card_number=0x7f060009;
-        public static final int hello_world=0x7f060002;
-        public static final int loading=0x7f06000a;
-        public static final int log_in=0x7f060008;
-        public static final int lunch=0x7f060006;
-        public static final int missing_name=0x7f06000c;
-        public static final int refresh=0x7f06000d;
-        public static final int restaurants=0x7f06000b;
-        public static final int title_activity_login=0x7f060003;
+        public static final int back=0x7f060006;
+        public static final int balance=0x7f060004;
+        public static final int enter_card_number=0x7f060008;
+        public static final int loading=0x7f060009;
+        public static final int log_in=0x7f060007;
+        public static final int lunch=0x7f060005;
+        public static final int missing_name=0x7f06000b;
+        public static final int no_card_number=0x7f06000e;
+        public static final int no_dishes_found=0x7f06000d;
+        public static final int no_name=0x7f06000f;
+        public static final int no_value=0x7f060010;
+        public static final int refresh=0x7f06000c;
+        public static final int restaurants=0x7f06000a;
+        public static final int title_activity_login=0x7f060002;
     }
     public static final class style {
         /** 

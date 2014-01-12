@@ -1,6 +1,5 @@
 package imarcus.android.karkortet;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -21,22 +20,9 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
-
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 public class CardActivity extends FragmentActivity {
@@ -98,7 +84,7 @@ public class CardActivity extends FragmentActivity {
 		List<Fragment> fList = new ArrayList<Fragment>();
 		
 		if(restaurants.size() == 0){
-			fList.add(SlideFragment.newInstance("","Cannot find any restaurants",""));
+			fList.add(SlideFragment.newInstance("",getString(R.string.no_dishes_found),""));
 		} else {
 			for (Restaurant restaurant : restaurants) {
 				fList.add(SlideFragment.newInstance(restaurant.getRestaurantName(),
@@ -110,14 +96,20 @@ public class CardActivity extends FragmentActivity {
 
 	//Sets card information shown in this activity
 	private void setCardInformation(String name, String value, String cardNr) {
+		
 		TextView nameView = (TextView) findViewById(R.id.TextViewName);
-		nameView.setText(name);
-
 		TextView cardNumber = (TextView) findViewById(R.id.TextViewCardNumber);
-		cardNumber.setText(cardNr);
-
 		TextView accountBalance = (TextView) findViewById(R.id.TextViewAccountBalance);
-		accountBalance.setText(value + " kr");
+
+		if(cardNr.equals("")){ //If no card number was entered
+			nameView.setText(R.string.no_name);
+			cardNumber.setText(R.string.no_card_number);
+			accountBalance.setText("0 kr");
+		} else {
+			nameView.setText(name);
+			cardNumber.setText(cardNr);
+			accountBalance.setText(value + " kr");
+		}
 	}
 
 	/*
@@ -160,8 +152,6 @@ public class CardActivity extends FragmentActivity {
 					return null;
 				}
 
-				Calendar today = Calendar.getInstance();
-
 				// Build expression for finding xml elements
 				XPathFactory xPathfactory = XPathFactory.newInstance();
 				XPath xpath = xPathfactory.newXPath();
@@ -201,7 +191,7 @@ public class CardActivity extends FragmentActivity {
 							.parse("http://cm.lskitchen.se/" + location + "/" + restaurant + "/"
 					+ language
 					+ "/"
-					+ "today"/*today.get(Calendar.DAY_OF_MONTH)*/ + ".rss");
+					+ "today" + ".rss");
 
 					expr = xpath.compile("//channel");
 

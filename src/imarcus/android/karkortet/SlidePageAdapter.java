@@ -6,6 +6,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+/*
+ * Adapter for 
+ */
 class SlidePageAdapter extends FragmentPagerAdapter {
   private List<Fragment> fragments;
 

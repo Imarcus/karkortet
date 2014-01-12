@@ -7,12 +7,16 @@
     <string name="CARD_NUMBER"></string>
     <string name="balance">SALDO</string>
     <string name="lunch">LUNCH</string>
-    <string name="back">TILLBAKA</string>
+    <string name="back">INSTÄLLNINGAR</string>
     <string name="log_in">LOGGA IN</string>
     <string name="enter_card_number">SKRIV IN KORTNUMMER</string>
     <string name="loading">LADDAR</string> 
     <string name="restaurants">VÄLJ RESTAURANGER</string>
     <string name="missing_name">Saknar Namn</string>
     <string name="refresh">UPPDATERA</string>
+    <string name="no_dishes_found">Hittade ingen information</string>
+    <string name="no_card_number">INTE INLOGGAD</string>
+    <string name="no_name">INGET NAMN</string>
+    <string name="no_value">Inget Saldo</string>
 
 </resources>

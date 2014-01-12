@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+/*
+ * GUI element for browsing choosen restaurants
+ */
 public class SlideFragment extends Fragment {
 
 	public static final String FOOD_MESSAGE = "FOOD_MESSAGE";
@@ -20,6 +23,11 @@ public class SlideFragment extends Fragment {
 	{
 		SlideFragment f = new SlideFragment();
 		Bundle bdl = new Bundle(1);
+		
+		if(restaurantName.equals("Meny Food Court")){
+			restaurantName = "Meny L's Kitchen";
+		}
+		
 		bdl.putString(FOOD_MESSAGE, food);
 		bdl.putString(DISH_MESSAGE, dishName);
 		bdl.putString(RESTAURANT_MESSAGE, restaurantName);
