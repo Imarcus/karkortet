@@ -6,6 +6,9 @@ The purpose of this application is to provide Chalmers students at both Johanneb
 
 The menus from which this application gathers its data comes from these rss-feeds: http://www.chalmerskonferens.se/en/rss-2/
 
+<a href="http://sv.tinypic.com?ref=w991e1" target="_blank"><img src="http://i43.tinypic.com/w991e1.png" border="0" alt="Image and video hosting by TinyPic"></a>
+<a href="http://sv.tinypic.com?ref=2mwuyxg" target="_blank"><img src="http://i40.tinypic.com/2mwuyxg.png" border="0" alt="Image and video hosting by TinyPic"></a>
+
 
 Contributing
 =========
